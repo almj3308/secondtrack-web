@@ -1,0 +1,423 @@
+
+
+/* --------------- Size Config --------------- */
+// $pc-maxWidth: 1200px;
+// $tablet-maxWidth: 768px;
+$maxWidth: 1200px;
+$minWidth: 768px;
+
+$innerPadding: 40px;
+
+
+/* --------------- Color Config --------------- */
+$color-Error: #FF001A;
+$color-Success: #58E62E;
+$color-Warning: #FFDD00;
+$color-Information: #0077FF;
+
+$color-GLING50: #E0F7FA;
+$color-GLING100: #b2ebf2;
+$color-GLING200: #80deea;
+$color-GLING300: #4dcfe1;
+$color-GLING400: #26c5da;
+$color-GLING500: #00BCD4;
+$color-GLING600: #00abc1;
+$color-GLING700: #0096a7;
+$color-GLING800: #00828f;
+$color-GLING900: #005f64;
+
+$color-Blue50: #E7F5FF;
+$color-Blue100: #D0EBFF;
+$color-Blue200: #A5D8FF;
+$color-Blue300: #74C0FC;
+$color-Blue400: #4DABF7;
+$color-Blue500: #339AF0;
+$color-Blue600: #228BE6;
+$color-Blue700: #1C7ED6;
+$color-Blue800: #1971C2;
+$color-Blue900: #1864AB;
+
+$color-Red50: #ffecef;
+$color-Red100: #ffced4;
+$color-Red200: #f99c9d;
+$color-Red300: #f37476;
+$color-Red400: #FF5252;
+$color-Red500: #ff3e36;
+$color-Red600: #f73536;
+$color-Red700: #e42930;
+$color-Red800: #d72028;
+$color-Red900: #c8111c;
+
+$color-Gray50: #f8f9fa;
+$color-Gray100: #f1f3f5;
+$color-Gray200: #e9ecef;
+$color-Gray300: #dee2e6;
+$color-Gray400: #ced4da;
+$color-Gray500: #adb5bd;
+$color-Gray600: #868e96;
+$color-Gray700: #495057;
+$color-Gray800: #343a40;
+$color-Gray900: #212529;
+$color-Black: #121417;
+$color-White: #FFFFFF;
+
+/* --------------- Style Config --------------- */
+
+// 사용방법: *.scss -> @include Style_??();
+@mixin Style_H1() { font-weight: 700; font-size: 48px; word-spacing: 0px; }
+@mixin Style_H2() { font-weight: 700; font-size: 36px; word-spacing: 0px; }
+@mixin Style_H3() { font-weight: 700; font-size: 28px; word-spacing: 0px; }
+@mixin Style_H4() { font-weight: 700; font-size: 24px; word-spacing: 0px; line-height: 30px; }
+@mixin Style_H5() { font-weight: 700; font-size: 20px; word-spacing: 0px; }
+@mixin Style_H6() { font-weight: 700; font-size: 16px; word-spacing: 0px; }
+@mixin Style_H7() { font-weight: 700; font-size: 14px; word-spacing: 0px; }
+@mixin Style_H8() { font-weight: 700; font-size: 12px; word-spacing: 0px; }
+@mixin Style_Body1() { font-weight: 300; font-size: 16px; word-spacing: -2px; line-height: 28px; }
+@mixin Style_Body2() { font-weight: 300; font-size: 14px; word-spacing: -2px; line-height: 24.5px; }
+@mixin Style_Body3() { font-weight: 300; font-size: 12px; word-spacing: -2px; line-height: 21px; }
+@mixin Style_Body4() { font-weight: 300; font-size: 10px; word-spacing: -2px; line-height: 17.5px; }
+@mixin Style_ButtonsSmall() { font-weight: 400; font-size: 12px; word-spacing: -2px; line-height: 12px; }
+@mixin Style_ButtonsMedium() { font-weight: 400; font-size: 14px; word-spacing: -2px; line-height: 14px; }
+@mixin Style_ButtonsLarge() { font-weight: 400; font-size: 16px; word-spacing: -2px; line-height: 16px; }
+@mixin Style_Label() { font-weight: 300; font-size: 12px; word-spacing: -2px; line-height: 12px; }
+@mixin Style_Placeholder() { font-weight: 300; font-size: 16px; word-spacing: -2px; line-height: 16px; color: $color-Gray600; }
+@mixin Style_HyperText() { font-weight: 300; font-size: 12px; word-spacing: -2px; line-height: 12px; }
+
+// 사용방법: *.tsx -> <div className="style??>test</div>
+.styleH1 {@include Style_H1();}
+.styleH2 {@include Style_H2();}
+.styleH3 {@include Style_H3();}
+.styleH4 {@include Style_H4();}
+.styleH5 {@include Style_H5();}
+.styleH6 {@include Style_H6();}
+.styleH7 {@include Style_H7();}
+.styleBody1 {@include Style_Body1();}
+.styleBody2 {@include Style_Body2();}
+.styleBody3 {@include Style_Body3();}
+.styleBody4 {@include Style_Body4();}
+.styleButtonsSmall {@include Style_ButtonsSmall();}
+.styleButtonsMedium {@include Style_ButtonsMedium();}
+.styleButtonsLarge {@include Style_ButtonsLarge();}
+.styleLabel {@include Style_Label();}
+.stylePlaceholder {@include Style_Placeholder();}
+.styleHyperText {@include Style_HyperText();}
+
+
+/* --------------- 드래그 방지 --------------- */
+@mixin preventDrag() {
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select:none;
+	-webkit-user-drag: none;
+}
+
+
+/* --------------- Global Style --------------- */
+html, body, #__next {
+  min-height: 100%;
+  height: auto;
+}
+#__next {
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  display: block;
+  padding-bottom: 100px !important;
+  height: 100%;
+}
+
+
+
+
+
+/* 체크박스 공통 */
+input[type="checkbox"]{
+  display: none;
+}
+input[type="checkbox"] + label {
+  display: flex;
+  align-items: center;
+  @include Style_ButtonsLarge();
+  color: $color-Gray600;
+}
+input[type="checkbox"] + label::before{
+  content:'';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url('/icons/ic-check.svg');
+  position: relative;
+  margin-right: 10px;
+}
+input[type="checkbox"]:checked + label {
+  display: flex;
+  align-items: center;
+  @include Style_ButtonsLarge();
+  color: $color-Black;
+}
+input[type="checkbox"]:checked + label::before{
+  display: block;
+  content:'';
+  width: 24px;
+  height: 24px;
+  background-image: url('/icons/ic-checked.svg');
+  position: relative;
+  margin-right: 10px;
+}
+
+/* 인풋 공통 */
+.input-line {
+  margin-top: 30px;
+  .label {
+    @include Style_Body2();
+    color: $color-Gray600;
+  }
+  .input-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid $color-Gray300;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding-right: 15px;
+    input {
+      width: 100%;
+      height: 48px;
+      border: 0;
+      outline: 0;
+      font-weight: 300;
+      font-size: 16px;
+    }
+  }
+  .input-info {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    color: $color-Gray600;
+    @include Style_Body2();
+    img {
+      margin-left: 10px;
+    }
+  }
+  .wrong {
+    color: $color-Error;
+  }
+  .correct {
+    color: $color-GLING500;
+  }
+  .profile-image {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-top: 10px;
+    background-color: $color-Gray50;
+    background-image: url('/icons/avatar.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    .btn-add {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+/* 텍스트에어리어 공통 */
+.textarea-line {
+  margin-top: 20px;
+  > textarea {
+    border: 1px solid $color-Gray300;
+    border-radius: 5px;
+    width: 100%;
+    outline: 0;
+    padding: 10px 20px;
+    resize: none;
+    font-weight: 300;
+    font-size: 16px;
+  }  
+}
+
+/* 커스텀 테이블 */
+.work-table {
+  margin-top: 20px;
+  .thead {
+      border-top: 1px solid $color-Black;
+      border-bottom: 1px solid $color-Black;
+      .tr {
+          display: flex;
+          justify-content: space-around;
+          .th {
+              padding: 10px 0px;
+              @include Style_Body2();
+              text-align: center;
+          }          
+      }
+  }
+  .tbody {                
+      .none-list {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 465px;
+          border-bottom: 1px solid $color-Gray200;
+          span {
+              @include Style_Body2();
+              color: $color-Gray600;
+              margin-top: 15px;
+          }
+      }
+      > .tr {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          border-bottom: 1px solid $color-Gray200;
+          .td {
+              padding: 15px 0px;
+              text-align: center;
+              @include Style_Body2();
+              img {
+                  width: 72px;
+              }
+              .btn-detail {
+                  display: inline-flex;
+                  padding: 15px 20px;
+                  border-radius: 5px;
+                  background-color: $color-GLING300;
+                  color: $color-Black;
+                  cursor: pointer;
+                  @include Style_ButtonsSmall();
+              }
+          }         
+      }
+  }
+  .tfoot {
+      margin-bottom: 50px;
+      .page-number {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px;
+          li {
+              .number {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 25px;
+                  height: 25px;
+                  margin: 0px 10px;
+                  color: $color-Black;
+                  cursor: pointer;
+              }
+              .btn-prev {
+                  margin-left: 10px;
+              }
+              .btn-next {
+                  margin-right: 10px;
+              }
+          }
+          li.active {
+              .number {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 25px;
+                  height: 25px; 
+                  margin: 0px 10px;  
+                  color: $color-GLING500;
+              }
+          }
+      }
+  }
+}
+
+/* 키워드 */
+.keyword-lists {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 30px;
+  .keyword {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 10px;
+      background-color: $color-GLING50;
+      border-radius: 30px;
+      margin-right: 5px;
+      margin-bottom: 15px;
+      .name {
+          font-size: 14px;
+          font-weight: 400;
+          color: $color-Black;
+      }
+      .btn-del {
+          width: 18px;
+          height: 18px;
+          margin-left: 8px;
+          cursor: pointer;
+          img {
+              width: 100%;
+          }
+      }
+  }
+}
+
+.keyword-line {
+  .keyword-info {
+      display: flex;
+      align-items: center;
+      margin: 5px 0px 10px 0px;
+      > span {
+          font-size: 16px;
+          font-weight: 400;
+          margin-left: 5px;
+          color: $color-Information;
+      }
+  }
+  .button-input {
+      display: flex;
+      align-items: center;
+      .input-box {
+          display: flex;
+          align-items: center;
+          border: 1px solid $color-Gray300;
+          border-radius: 5px;
+          width: 490px;
+          height: 50px;
+          padding-right: 15px;
+          input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            font-weight: 300;
+            font-size: 16px;
+          }
+      }
+      .btn-add {
+          width: 80px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $color-Black;
+          border: 1px solid $color-Gray300;
+          border-radius: 5px;
+          margin-left: 10px;
+          cursor: pointer;
+          @include Style_ButtonsMedium();
+      }
+  }
+  .input-info {
+      @include Style_Body2();
+      margin-top: 5px;
+      color: $color-Gray600;
+  }
+  
+}
